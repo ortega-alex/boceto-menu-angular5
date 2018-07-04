@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="card card-container">
+        <form class="form-signin" #registroForm="ngForm">
+            <input type="name" id="name" [(ngModel)]="user.name" name="name" #name="ngModel" class="form-control" placeholder="Name" required autofocus/>
+            <input type="email" id="email" [(ngModel)]="user.email" name="email" #email="ngModel" class="form-control" placeholder="Email address" required autofocus/>
+            <input type="password" class="form-control" [(ngModel)]="user.password" id="password" name="password" #password="ngModel" placeholder="Password" required/>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="registro(user)" [disabled]="!registroForm.form.valid">
+                Registro
+            </button>
+        </form>
+        <div *ngIf="messangeError">
+            <p>
+                {{ messangeError }}
+            </p>
+        </div>
+    </div>
+</div>

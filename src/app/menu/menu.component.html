@@ -1,0 +1,96 @@
+<!--
+    menu
+-->
+<!--navbar-->
+<div class="pos-f-t">
+    <nav class="navbar navbar-dark bg-dark">
+        <button aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarToggleExternalContent" data-toggle="collapse" id="sidebarCollapse" type="button">
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+        <div class="btn-group">
+            <button aria-expanded="false" aria-haspopup="true" class="btn btn-dark" data-toggle="dropdown" type="button">
+                <span class="fa fa-user">
+                </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a (click)="logout()" class="dropdown-item" href="#">
+                    logout
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--end navbar-->
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav class="active" id="sidebar">
+        <div class="sidebar-header">
+            <a [routerLink]="'/menu'">
+                Bootstrap
+            </a>
+            <strong>
+                BT
+            </strong>
+        </div>
+        <ul class="list-unstyled components">
+            <li routerlinkactive="active">
+                <a [routerLink]="'/menu'">
+                    <i class="fa fa-briefcase">
+                    </i>
+                    home
+                </a>
+            </li>
+            <li routerlinkactive="active">
+                <a aria-expanded="false" class="dropdown-toggle" data-toggle="collapse" href="#pageSubmenu">
+                    <i class="fa fa-copy">
+                    </i>
+                    pages
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li routerlinkactive="active">
+                        <a [routerLink]="'/menu'">
+                            Page 1
+                        </a>
+                    </li>
+                    <li routerlinkactive="active">
+                        <a [routerLink]="'/menu'">
+                            Page 2
+                        </a>
+                    </li>
+                    <li routerlinkactive="active">
+                        <a [routerLink]="'/menu'">
+                            Page 3
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li routerlinkactive="active">
+                <a [routerLink]="'/menu'">
+                    <i class="fa fa-cog">
+                    </i>
+                    confing
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!--end side menu -->
+    <!-- Page Content  -->
+    <div id="content">
+        <!--contenido-->
+        <div class="container-fluid" text-center="">
+            <router-outlet>
+            </router-outlet>
+        </div>
+        <!--end contenido-->
+        <!--footer-->
+        <footer class="container-fluid text-center " style="position: absolute; bottom: 0%;">
+            <p>
+                Alex Ortega
+            </p>
+        </footer>
+        <!--end footer-->
+    </div>
+    <!--end Page Content  -->
+</div>
+<!--end menu-->
